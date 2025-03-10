@@ -1,0 +1,9 @@
+zone "ifri.com" {
+    type master;
+    file "/var/cache/bind/db.ifri.com";
+};
+
+zone "122.168.192.in-addr.arpa" {
+    type master;
+    file "/var/cache/bind/db.reverse.ifri.com";
+};

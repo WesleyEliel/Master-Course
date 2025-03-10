@@ -1,0 +1,17 @@
+---
+- hosts: all
+  tasks:
+    - name: "add sourceslist"
+      copy:
+        src: template/sources.list
+        dest: /etc/apt/sources.list
+        owner: root
+        group: root
+        mode: 0644
+      become: true
+
+    - name: Effectuer une mise à niveau des paquets
+      ansible.builtin.apt:
+        upgrade: dist
+        update_cache: yes
+      become: true

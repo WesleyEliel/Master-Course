@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+
+    - name: Installer un agent de copy
+      ansible.builtin.apt:
+        name: spice-vdagent
+        update_cache: yes
+      become: true

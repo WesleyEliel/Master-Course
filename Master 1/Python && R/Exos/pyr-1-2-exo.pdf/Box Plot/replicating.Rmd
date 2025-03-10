@@ -1,0 +1,89 @@
+```{r}
+# Exercice 1
+
+boxplot(Sepal.Width ~ Species, 
+        data = iris, 
+        main = "Boîte à moustaches par défaut")
+
+# Exercice 2
+
+boxplot(Sepal.Width ~ Species, 
+        data = iris, 
+        ylim = c(2, 4.5), 
+        main = "Étendue modifiée de l'axe des y")
+            
+        
+# Exercice 3
+
+
+boxplot(Sepal.Width ~ Species, 
+        data = iris, 
+        xaxt = "n",        
+        yaxt = "n",       
+        xlab = "",         
+        ylab = "",         
+        main = "Axes et étiquettes supprimés")
+
+
+# Exercice 4
+
+boxplot(Sepal.Width ~ Species, 
+        data = iris, 
+        notch = TRUE,      
+        main = "Graphique avec encoches")
+
+
+
+# Exercice 5
+
+boxplot(Sepal.Width ~ Species, 
+        data = iris, 
+        space = 2,         
+        main = "Espacement entre les boîtes augmenté")
+
+
+# Exercice 6
+
+boxplot(Sepal.Width ~ Species, 
+        data = iris, 
+        border = "blue",   
+        main = "Bordures en bleu")
+
+# Exercice 7
+
+boxplot(Sepal.Width ~ Species, 
+        data = iris, 
+        medcol = "red",    
+        lwd = 1,         
+        main = "Lignes médianes rouges et larges")
+
+# Exercice 8
+
+boxplot(Sepal.Width ~ Species, 
+        data = iris, 
+        col = "white",     
+        pch = 3,          
+        cex = 0.8,      
+        main = "Personnalisation des points aberrants")
+
+# Exercice 9
+
+boxplot(Sepal.Width ~ Species, 
+        data = iris, 
+        main = "Comparison of three species in the Fisher iris data",  
+        ylab = "Sepal width in mm")                                    
+
+# Exercice 10
+
+boxplot(Sepal.Width ~ Species, 
+        data = iris, 
+        yaxt = "n",          
+        xaxt = "n",          
+        xlab = "Species", 
+        ylab = "Sepal width in mm", 
+        main = "Axes et graduations en style MATLAB")
+
+axis(1, at = 1:3, labels = levels(iris$Species)) 
+
+axis(2, las = 1)                                 
+axis(4, las = 1)                                  

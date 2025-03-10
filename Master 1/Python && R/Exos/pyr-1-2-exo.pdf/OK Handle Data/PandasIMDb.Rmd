@@ -1,0 +1,232 @@
+```{r}
+#Exercice 1
+
+library(dplyr)  
+df <- read.csv('g:\\Cryptographie\\dataframe\\movies_metadata.csv')
+cat("Colonnes du DataFrame :\n")
+print(colnames(df))
+
+#Exercice 2
+
+library(dplyr) 
+df <- read.csv('g:\\Cryptographie\\dataframe\\movies_metadata.csv')
+cat("Détails du DataFrame :\n")
+str(df)  
+
+#Exercice3
+
+library(readr)
+df <- read_csv("g:\\Cryptographie\\dataframe\\movies_metadata.csv")
+third_movie <- df[3, ]
+cat("Détails du troisième film :\n")
+print(third_movie)
+
+#Exercice4
+
+library(readr)
+
+df <- read_csv(
+  "g:\\Cryptographie\\dataframe\\movies_metadata.csv",
+  show_col_types = FALSE
+)
+
+if (any(problems(df)$row)) {
+  warning("Des problèmes de parsing ont été détectés. Utilisez `problems(df)` pour plus de détails.")
+}
+
+result <- dim(df)
+cat("Nombre de lignes et de colonnes du DataFrame :\n")
+print(result)
+
+#Exercice5
+  
+library(readr)
+
+df <- read_csv("g:\\Cryptographie\\dataframe\\movies_metadata.csv", show_col_types = FALSE)
+
+title_genres <- df[, c("title", "genres")]
+
+cat("Details of the columns 'title' and 'genres':\n")
+print(title_genres)
+
+
+
+#Exercice6
+
+library(readr)
+df <- read_csv("g:\\Cryptographie\\dataframe\\movies_metadata.csv", show_col_types = FALSE)
+movie_details <- df[df$title == "Grumpier Old Men", ]
+cat("Details of the movie 'Grumpier Old Men':\n")
+print(movie_details)
+
+
+#Exercice7
+
+library(readr)
+df <- read_csv("g:\\Cryptographie\\dataframe\\movies_metadata.csv", show_col_types = FALSE)
+fifth_movie <- df[5, ]
+cat("Details of the fifth movie:\n")
+print(fifth_movie)
+
+
+#Exercice8
+
+
+library(readr)
+
+df <- read_csv("g:\\Cryptographie\\dataframe\\movies_metadata.csv")
+
+small_df <- df %>% 
+  select(title, release_date, budget, revenue, runtime)
+
+
+print(head(small_df))
+
+#Exercice9
+
+
+library(readr)
+
+df <- read_csv("g:\\Cryptographie\\dataframe\\movies_metadata.csv", show_col_types = FALSE)
+
+cat("The first 10 rows of the DataFrame:\n")
+print(head(df, 10))
+
+#Exercice10
+
+
+library(readr)
+library(dplyr)
+
+df <- read_csv("g:\\Cryptographie\\dataframe\\movies_metadata.csv", show_col_types = FALSE)
+
+df_sorted <- df %>%
+  mutate(release_date = as.Date(release_date, format = "%Y-%m-%d")) %>%
+  arrange(release_date)
+
+cat("DataFrame sorted by release_date:\n")
+print(df_sorted)
+
+#Exercice11
+
+
+library(readr)
+library(dplyr)
+
+
+df <- read_csv("g:\\Cryptographie\\dataframe\\movies_metadata.csv", show_col_types = FALSE)
+
+
+df <- df %>%
+  mutate(release_date = as.Date(release_date, format = "%Y-%m-%d"))
+
+movies_after_1995 <- df %>%
+  filter(release_date > as.Date("1995-01-01"))
+
+cat("Films sortis après le 1995-01-01 :\n")
+print(movies_after_1995)
+
+
+#Exercice12
+
+
+library(readr)
+library(dplyr)
+
+df <- read_csv("g:\\Cryptographie\\dataframe\\movies_metadata.csv", show_col_types = FALSE)
+
+df_sorted_runtime <- df %>%
+  arrange(desc(runtime))
+
+cat("Movies sorted by runtime in descending order:\n")
+print(df_sorted_runtime)
+
+#Exercice13
+
+library(readr)
+library(dplyr)
+
+df <- read_csv("g:\\Cryptographie\\dataframe\\movies_metadata.csv", show_col_types = FALSE)
+df <- df %>%
+  mutate(
+    revenue = as.numeric(revenue),
+    budget = as.numeric(budget)
+  )
+filtered_movies <- df %>%
+  filter(revenue > 2e6 & budget < 1e6)
+cat("Movies with revenue > 2 million and budget < 1 million:\n")
+print(filtered_movies)
+
+#Exercice14
+
+library(readr)
+library(dplyr)
+df <- read_csv("g:\\Cryptographie\\dataframe\\movies_metadata.csv", show_col_types = FALSE)
+df <- df %>%
+  mutate(runtime = as.numeric(runtime))
+longest_runtime <- max(df$runtime, na.rm = TRUE)
+shortest_runtime <- min(df$runtime, na.rm = TRUE)
+cat("Longest runtime:", longest_runtime, "minutes\n")
+cat("Shortest runtime:", shortest_runtime, "minutes\n")
+
+
+#Exercice15
+
+
+library(readr)
+library(dplyr)
+
+df <- read_csv("g:\\Cryptographie\\dataframe\\movies_metadata.csv", show_col_types = FALSE)
+
+df <- df %>%
+  mutate(vote_count = as.numeric(vote_count))
+
+percentile_70 <- quantile(df$vote_count, 0.7, na.rm = TRUE)
+
+cat("The number of votes garnered by the 70% movie:", percentile_70, "\n")
+
+
+#Exercice16
+
+
+library(readr)
+library(dplyr)
+
+df <- read_csv("g:\\Cryptographie\\dataframe\\movies_metadata.csv", show_col_types = FALSE)
+
+df <- df %>%
+  mutate(runtime = as.numeric(runtime))
+
+filtered_movies <- df %>%
+  filter(runtime > 30 & runtime < 360) %>%
+  select(title, runtime)
+
+cat("Movies longer than 30 minutes and shorter than 360 minutes:\n")
+print(filtered_movies)
+
+#Exercice17
+
+
+library(readr)
+library(dplyr)
+
+df <- read_csv("g:\\Cryptographie\\dataframe\\movies_metadata.csv", show_col_types = FALSE)
+
+df <- df %>%
+  mutate(vote_count = as.numeric(vote_count))
+
+filter_movies_by_votes <- function(data, votes) {
+  filtered_movies <- data %>%
+    filter(vote_count == votes) %>%
+    select(title, vote_count)
+  
+  if (nrow(filtered_movies) > 0) {
+    cat("Movies with", votes, "votes:\n")
+    print(filtered_movies)
+  } else {
+    cat("No movies found with", votes, "votes.\n")
+  }
+}
+
+specified_votes <- 500
+filter_movies_by_votes(df, specified_votes)

@@ -1,0 +1,9 @@
+https://randomnerdtutorials.com/esp32-dht11-dht22-temperature-humidity-web-server-arduino-ide/
+
+
+https://randomnerdtutorials.com/esp32-dht11-dht22-temperature-humidity-sensor-arduino-ide/
+
+
+https://randomnerdtutorials.com/esp32-relay-module-ac-web-server/
+
+

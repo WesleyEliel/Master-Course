@@ -1,0 +1,255 @@
+
+```{r}
+library(dplyr)
+library(readr)
+
+#############################################################################
+
+# Question N ° 1 : Afficher les colonnes du DataQuestionFrame
+cat("\n Question N ° 1 : Afficher les colonnes du DataQuestionFrame \n")
+data <- read.csv("./movies_metadata.csv")
+cat("Liste des colonnes disponibles dans le DataFrame :\n")
+print(names(data))
+
+cat("\n\n\n")
+
+#############################################################################
+
+# Question N ° 2 : Afficher les détails du DataFrame 
+
+cat("\n Question N ° 2 : Afficher les détails du DataFrame  \n")
+
+
+data <- read.csv("./movies_metadata.csv")
+cat("Structure du DataFrame :\n")
+str(data)
+
+cat("\n\n\n")
+
+#############################################################################
+
+
+# Question N ° 3 : Obtenir les détails du troisième film 
+
+cat("\n Question N ° 3 : Obtenir les détails du troisième film  \n\n\n")
+
+data <- read_csv("./movies_metadata.csv")
+third_entry <- data[3, ]
+cat("Informations sur le troisième film :\n")
+print(third_entry)
+
+cat("\n\n\n\n")
+
+#############################################################################
+
+
+# Question N ° 4 : Dimensions du DataFrame avec vérification des erreurs
+
+cat("\n Question N ° 4 : Dimensions du DataFrame avec vérification des erreurs  \n\n\n")
+
+data <- read_csv(
+  "./movies_metadata.csv",
+  show_col_types = FALSE
+)
+
+cat("Dimensions du DataFrame (lignes, colonnes) :\n")
+print(dim(data))
+
+cat("\n\n\n\n\n")
+
+#############################################################################
+
+
+# Question N ° 5 : Sélection des colonnes 'title' et 'genres'
+
+cat("\n Question N ° 5 : Sélection des colonnes 'title' et 'genres' \n\n\n")
+
+data <- read_csv("./movies_metadata.csv", show_col_types = FALSE)
+title_genres_subset <- data[, c("title", "genres")]
+cat("Contenu des colonnes 'title' et 'genres' :\n")
+print(title_genres_subset)
+
+cat("\n\n\n\n\n")
+
+#############################################################################
+
+
+# Question N ° 6 : Détails du film "Grumpier Old Men"
+
+cat("\n Question N ° 6 : Détails du film 'Grumpier Old Men' \n\n\n")
+
+data <- read_csv("./movies_metadata.csv", show_col_types = FALSE)
+details_grumpier <- data[data$title == "Grumpier Old Men", ]
+cat("Informations sur le film 'Grumpier Old Men' :\n")
+print(details_grumpier)
+
+cat("\n\n\n\n\n")
+
+#############################################################################
+
+
+# Question N ° 7 : Détails du cinquième film
+
+cat("\n  Question N ° 7 : Détails du cinquième film  \n\n\n")
+
+data <- read_csv("./movies_metadata.csv", show_col_types = FALSE)
+fifth_entry <- data[5, ]
+cat("Informations sur le cinquième film :\n")
+print(fifth_entry)
+
+cat("\n\n\n\n\n")
+
+#############################################################################
+
+
+# Question N ° 8 : Réduction des colonnes pour des informations clés
+
+cat("\n Question N ° 8 : Réduction des colonnes pour des informations clés  \n\n\n")
+
+data <- read_csv("./movies_metadata.csv")
+compact_data <- data %>% select(title, release_date, budget, revenue, runtime)
+cat("Aperçu des données réduites :\n")
+print(head(compact_data))
+
+cat("\n\n\n\n\n")
+
+#############################################################################
+
+
+# Question N ° 9 : Afficher les 10 premières lignes
+
+cat("\n Question N ° 9 : Afficher les 10 premières lignes  \n\n\n")
+
+data <- read_csv("./movies_metadata.csv", show_col_types = FALSE)
+cat("Les 10 premières entrées du DataFrame :\n")
+print(head(data, 10))
+
+cat("\n\n\n\n\n")
+
+#############################################################################
+
+
+# Question N ° 10 : Tri par date de sortie des films
+
+cat("\n Question N ° 10 : Tri par date de sortie des films  \n\n\n")
+
+data <- read_csv("./movies_metadata.csv", show_col_types = FALSE)
+data <- data %>% mutate(release_date = as.Date(release_date, format = "%Y-%m-%d")) %>% arrange(release_date)
+cat("DataFrame trié par date de sortie :\n")
+print(data)
+
+cat("\n\n\n\n\n")
+
+#############################################################################
+
+
+# Question N ° 11 : Films sortis après le 1er janvier 1995
+
+cat("\n Question N ° 11 : Films sortis après le 1er janvier 1995 \n\n\n")
+
+data <- read_csv("./movies_metadata.csv", show_col_types = FALSE)
+data <- data %>% mutate(release_date = as.Date(release_date, format = "%Y-%m-%d"))
+movies_1995_plus <- data %>% filter(release_date > as.Date("1995-01-01"))
+cat("Films publiés après le 1er janvier 1995 :\n")
+print(movies_1995_plus)
+
+cat("\n\n\n\n\n")
+
+#############################################################################
+
+
+# Question N ° 12 : Tri décroissant par durée
+
+cat("\n Question N ° 12 : Tri décroissant par durée \n\n\n")
+
+data <- read_csv("./movies_metadata.csv", show_col_types = FALSE)
+movies_desc_runtime <- data %>% arrange(desc(runtime))
+cat("Films triés par durée (ordre décroissant) :\n")
+print(movies_desc_runtime)
+
+cat("\n\n\n\n\n")
+
+#############################################################################
+
+
+# Question N ° 13 : Films avec recettes > 2M et budget < 1M
+
+cat("\n Question N ° 13 : Films avec recettes > 2M et budget < 1M \n\n\n")
+
+data <- read_csv("./movies_metadata.csv", show_col_types = FALSE)
+data <- data %>% mutate(revenue = as.numeric(revenue), budget = as.numeric(budget))
+profitable_movies <- data %>% filter(revenue > 2e6 & budget < 1e6)
+cat("Films avec recettes > 2M et budget < 1M :\n")
+print(profitable_movies)
+
+cat("\n\n\n\n\n")
+
+#############################################################################
+
+
+# Question N ° 14 : Temps de projection minimum et maximum
+
+cat("\n Question N ° 14 : Temps de projection minimum et maximum \n\n\n")
+
+data <- read_csv("./movies_metadata.csv", show_col_types = FALSE)
+data <- data %>% mutate(runtime = as.numeric(runtime))
+max_runtime <- max(data$runtime, na.rm = TRUE)
+min_runtime <- min(data$runtime, na.rm = TRUE)
+cat("Durée maximale :", max_runtime, "minutes\n")
+cat("Durée minimale :", min_runtime, "minutes\n")
+
+cat("\n\n\n\n\n")
+
+#############################################################################
+
+
+# Question N ° 15 : Nombre de votes pour le 70e centile
+
+cat("\n Question N ° 15 : Nombre de votes pour le 70e centile \n\n\n")
+
+data <- read_csv("./movies_metadata.csv", show_col_types = FALSE)
+data <- data %>% mutate(vote_count = as.numeric(vote_count))
+percentile_70_votes <- quantile(data$vote_count, 0.7, na.rm = TRUE)
+cat("Nombre de votes au 70e centile :", percentile_70_votes, "\n")
+
+cat("\n\n\n\n\n")
+
+#############################################################################
+
+
+# Question N ° 16 : Films avec durée comprise entre 30 et 360 minutes
+
+cat("\n  Question N ° 16 : Films avec durée comprise entre 30 et 360 minutes  \n\n\n")
+
+data <- read_csv("./movies_metadata.csv", show_col_types = FALSE)
+data <- data %>% mutate(runtime = as.numeric(runtime))
+filtered_runtime_movies <- data %>% filter(runtime > 30 & runtime < 360) %>% select(title, runtime)
+cat("Films avec une durée entre 30 et 360 minutes :\n")
+print(filtered_runtime_movies)
+
+cat("\n\n\n\n\n")
+
+#############################################################################
+
+
+# Question N ° 17 : Films avec un nombre spécifique de votes
+
+cat("\n Question N ° 17 : Films avec un nombre spécifique de votes  \n\n\n")
+
+data <- read_csv("./movies_metadata.csv", show_col_types = FALSE)
+data <- data %>% mutate(vote_count = as.numeric(vote_count))
+filter_movies_by_votes <- function(df, target_votes) {
+  results <- df %>% filter(vote_count == target_votes) %>% select(title, vote_count)
+  if (nrow(results) > 0) {
+    cat("Films avec", target_votes, "votes :\n")
+    print(results)
+  } else {
+    cat("Aucun film trouvé avec", target_votes, "votes.\n")
+  }
+}
+specified_vote_count <- 500
+filter_movies_by_votes(data, specified_vote_count)
+
+cat("\n\n\n\n\n")
+
+#############################################################################

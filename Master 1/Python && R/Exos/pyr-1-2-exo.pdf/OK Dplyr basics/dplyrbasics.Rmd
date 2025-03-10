@@ -1,0 +1,83 @@
+```{r}
+
+#Exercice 1 
+#Charger le jeu de données iris et examiner sa structure
+data(iris)
+
+library(dplyr)
+glimpse(iris)
+
+
+#Exercice 2    
+# Sélectionner les lignes 35 à 50 et afficher les colonnes Sepal.Length et Species
+iris %>%
+  slice(35:50) %>%
+  select(Sepal.Length, Species) %>%
+  print()
+
+
+
+#Exercice 3    
+#Sélectionner la dernière ligne du dataset et l'afficher
+iris %>%
+  slice_tail(n = 1) %>%
+  print()
+
+
+
+#Exercice 4
+# Compter combien de fleurs ont une Sepal.Length supérieure à 6
+iris %>%
+  summarise(count_long_sepal = sum(Sepal.Length > 6, na.rm = TRUE))
+
+
+#Exercice 5
+#Quelle espèce est la plus fréquente ?
+iris %>%
+  count(Species, sort = TRUE) %>%
+  slice_head(n = 1)
+
+
+
+#Exercice 6
+#Proportion de fleurs de chaque espèce avec une Sepal.Width inférieure ou égale à 3
+iris %>%
+  mutate(small_width = Sepal.Width <= 3) %>%
+  group_by(Species) %>%
+  summarise(proportion = mean(small_width, na.rm = TRUE))
+
+#Exercice 7
+#Sous-ensemble des fleurs dont la longueur de sépale est comprise entre 4.5 et 5.5, et calculer la proportion ayant une Petal.Width supérieure à 1
+iris %>%
+  filter(Sepal.Length >= 4.5 & Sepal.Length <= 5.5) %>%
+  summarise(proportion_large_petal = mean(Petal.Width > 1, na.rm = TRUE))
+
+
+
+#Exercice 8
+#Ajouter une nouvelle colonne Sepal.Length.Squared (carré de la longueur de sépale)
+iris <- iris %>%
+  mutate(Sepal.Length.Squared = Sepal.Length^2)
+
+
+
+#Exercice 9
+#Quelle espèce a la plus faible proportion de Sepal.Width supérieure à 3 ? Inclure le nombre d’observations par espèce
+iris %>%
+  group_by(Species) %>%
+  summarise(
+    proportion_large_sepal_width = mean(Sepal.Width > 3, na.rm = TRUE),
+    count = n()
+  ) %>%
+  arrange(proportion_large_sepal_width)
+
+
+#Exercice 10
+# Proportion de fleurs ayant une Petal.Width supérieure à 1 par catégorie de Species
+iris %>%
+  group_by(Species) %>%
+  summarise(
+    proportion_large_petal_width = mean(Petal.Width > 1, na.rm = TRUE),
+    count = n()
+  )
+

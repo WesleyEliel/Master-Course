@@ -1,0 +1,24 @@
+###
+Etape 1 1ère contrainte | x1 + x2 = x3 Pas de filtre 
+
+###
+Etape 2 2ème contrainte | allDiferent () Pas de filtre
+
+###
+Etape 3 3ème contrainte | x1 >= x2 return x1: {2, 4 } x2 : { 2, 4 }, x4: { 2, 3, 4, 5, 6, 7, 8 }
+
+###
+Etape 4 1ère contrainte | x1 + x2 = x3 Pas de filtre
+
+###
+Etape 5 2ème contrainte | allDiferent() return x3: {5, 6, 7, 8 } 
+
+###
+Etape 6 3ème contrainte | x1 >= x2 Pas de filtre
+
+###
+Etape 7 1ère contrainte | x1 + x2 = x3 return x3: { 6, 8 }
+
+
+
+

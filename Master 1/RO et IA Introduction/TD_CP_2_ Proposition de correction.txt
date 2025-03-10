@@ -1,0 +1,102 @@
+Exercice 1
+
+1 - Contraintes entre (C1 à C4) qui permettent de réduire le domaine de chaque variable :
+
+Proposition 1
+C2 ; 
+Proposition 2
+C1 et C4 ;
+
+2 - En supposant que nous venons d’assigner F = a, on a
+F = {a}
+E= {f}
+D = {e}
+A = {z}
+S = {b}
+J = {}
+
+Exercice 2 :
+
+1 - Contraintes importantes :
+ 
+  Soient les contraintes suivants:
+C1 : vous ne pouvez pas jouer deux pièces consécutives dans la même langue ; 
+
+C2 : vous ne pouvez pas jouer deux pièces consécutives du même style de musique ;
+
+C3 : vous devez faire jouer au moins une pièce de chaque style ; 
+
+C4 : vous devez placer une demande spéciale du président de votre association qui veut la 
+pièce M10 ; 
+
+C5 : vous devez terminer la soirée avec une pièce de jazz.
+
+Soient x_1, x_2, x_3, x_4 et x_5 les différents variables.
+
+D = { M1,..., M10 }
+
+cas 1
+Soit L la langue musical utilisée dans les différents morceaux.
+L(x_i) != L(x_i+1), avec i ∈ [1,4]
+
+cas 2
+  Soit S le style musical:
+  S(x_i) != S(x_i+1), avec i ∈ [1,4]
+
+cas 3
+  ∃ i, x_i ​∈ {M1,M2,M7}(rock),
+  ∃ i, x_i ∈ {M3,M8}(jazz),
+  ∃ i, x_i ∈ {M4,M5,M9}(techno),
+  ∃ i, x_i ∈ {M6,M10}(alternatif).
+
+cas 4
+ ∃ i ∈ [1,5]/ x_i = M10
+
+cas 5
+x_5 ∈ {M3, M8}
+
+2 - Pour la résolution du problème il faut utiliser l'algorithme du point fixe.
+
+1ere itération : x_5 ∈ {M3, M8}
+
+  x_1 ∈ {M1, M2, M3, M4, M5, M6, M7, M8, M9, M10}
+  x_2 ∈ {M1, M2, M3, M4, M5, M6, M7, M8, M9, M10}
+  x_3 ∈ {M1, M2, M3, M4, M5, M6, M7, M8, M9, M10}
+  x_4 ∈ {M1, M2, M3, M4, M5, M6, M7, M8, M9, M10}
+  x_5 ∈ {M3, M8}
+
+2eme itération : ∃ i ∈ [1,5]/ x_1 = M10
+  
+  x_1 = M10
+  x_2 ∈ {M1, M2, M3, M4, M5, M6, M7, M8, M9, M10}
+  x_3 ∈ {M1, M2, M3, M4, M5, M6, M7, M8, M9, M10}
+  x_4 ∈ {M1, M2, M3, M4, M5, M6, M7, M8, M9, M10}
+  x_5 ∈ {M3, M8}
+
+3eme itération : L(x_i) != L(x_i+1), avec i ∈ [1,4]
+
+  x_1 = M10
+  x_2 ∈ {M1, M2, M3, M4, M5, M6}
+  x_3 ∈ {M7, M8, M9, M10}
+  x_4 ∈ {M1, M2, M3, M4, M5, M6}
+  x_5 ∈ {M8}
+
+4eme itération : S(x_i) != S(x_i+1), avec i ∈ [1,4]
+
+  x_1 = M10
+  x_2 ∈ {M1, M2, M3, M4, M5}
+  x_3 ∈ {M7, M8, M9, M10}
+  x_4 ∈ {M1, M2, M3, M4, M5, M6}
+  x_5 ∈ {M8}
+
+5eme itération : 
+  ∃ i, x_i ​∈ {M1,M2,M7}(rock),
+  ∃ i, x_i ∈ {M3,M8}(jazz),
+  ∃ i, x_i ∈ {M4,M5,M9}(techno),
+  ∃ i, x_i ∈ {M6,M10}(alternatif)
+
+  x_1 = M10
+  x_2 ∈ {M1, M2, M3, M4, M5}
+  x_3 ∈ {M7, M8, M9, M10}
+  x_4 ∈ {M1, M2, M3, M4, M5, M6}
+  x_5 ∈ {M8}

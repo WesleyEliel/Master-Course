@@ -1,0 +1,16 @@
+DNS1
+192.168.122.12
+
+DNS2
+192.168.122.108
+
+
+Mail
+192.168.122.81
+
+Web
+192.168.122.211
+
+
+
+Difficulté à copier des truc de ma machine pour la machine distante

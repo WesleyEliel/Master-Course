@@ -1,0 +1,31 @@
+Principes de la blockchain
+
+Transparence
+Fiabilité
+Traçabilité
+Immuabilité
+Sécurité accrue des données
+
+
+
+Architecture decentralisée
+
+Detecter les fraudes graces au principe de la transparence
+
+Chaque noeud de la blockchain peut consulter la liste des transactions
+
+Un consensus, pour valider les transactions
+
+
+Contrat Intelligent:
+Un ensemble de règles définis, qui lorsqu' ils sont sont satisfait, déclenche une executuion d' un ensemble d' instruction pour éffectuer une action 
+
+Euuuuh
+
+
+"Algorithme de consensus: Preuve de Travail, Enjeu, Enjeu délégué, Destruction"
+
+Hashage fonction unidirectionnel, un message hashé à la fin, on ne peut retrouver le message initial
+
+
+Crypto Zombie

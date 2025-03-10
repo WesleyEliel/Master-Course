@@ -1,0 +1,103 @@
+Definition IOT
+
+Reseau d' objects connectés à internet capables de collecter et d' échanger des données.
+
+ - Des objects: Capteures, System On Chip
+ 
+ - Des données capturées ( Envoyées à une paserelle puis à internet , Stoké dans le cloud)
+ 
+ - Apprès analyse, des données traitées sont transamises à une application IOT ( exploite selon besoin,  )
+ 
+ - Il existe differentes plateformes ( cloud, d' autres qui supportant le dev d' apps Iot )
+ 
+ 
+ 
+ LEs menaces sur l' IOT:
+ 
+ Ressources disponibles limités ( batterie, memoire, processuer, ne peut pas supporter les mesure de sécurité habituelles)
+ 
+ #############################
+ Faille c'eest une faiblesse
+ 
+ La facilité qu' on a a exploiter cette faiblesse peut être quantifié en pourcentage et c' est ça on appel vulnerabilité
+ 
+ ##############################
+ 
+ 
+ 
+
+1 connection des données
+2 passerelles
+
+
+- Pagination sur les discounts 
+- ⁠Comment je creer un discounts
+- ⁠Comment je mets à jours un discount
+- ⁠Il se passe quoi niveau commits lorsque c’est un admin qui creer un discount ?
+
+Notification: 
+- La liste des types de notifications 
+- ⁠La liste des canaux actif de notifications
+- ⁠Ajouter un filtre basé sur le type et canaux de notification sur la liste des notification 
+
+Orders: 
+- Dans la response des orders details, je veux avoir les deails des users et tout autre object pouvant permet à un operateur de dénouer une situation
+- ⁠La pagination 
+Sur les points, precedents assurons nous d’ajoute les champs de date dans toutes reponse aussi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

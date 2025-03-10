@@ -1,0 +1,69 @@
+# Project-specific ignores
+.env
+**/*.pyc
+**/.idea/
+**/.vscode/
+**/__pycache__/
+**/migrations/**/
+!**/migrations/__init__.py
+
+# R project files
+**/.Rhistory
+**/.RData
+**/.Ruserdata
+**/.Renv
+**/.Rappdirs
+
+
+# Virtual environment
+**/venv/
+**/.env/
+
+# Python bytecode and compiled files
+**/*.py[cod]
+**/*.so
+
+# Distribution files
+**/.Python
+**/build/
+**/develop-eggs/
+**/dist/
+**/downloads/
+**/eggs/
+**/lib/
+**/lib64/
+**/parts/
+**/sdist/
+**/var/
+**/*.egg-info/
+**/.installed.cfg
+**/*.egg
+
+# IDE and OS-specific files
+**/.DS_Store
+**/.AppleDouble
+**/.LSOverride
+**/Icon
+**/._*
+**/.Spotlight-V100
+**/.Trashes
+
+# Documentation and test files
+**/docs/_build/
+**/.tox/
+**/.coverage
+**/.cache
+**/nosetests.xml
+**/coverage.xml
+
+# Translation files
+**/*.mo
+**/*.pot
+
+# PyInstaller files
+**/*.manifest
+**/*.spec
+
+# Installer logs
+**/pip-log.txt
+**/pip-delete-this-directory.txt
