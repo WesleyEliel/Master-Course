@@ -1,0 +1,228 @@
+CCNA 1
+
+EXO : DIFFERENTES TECH SANS FILS
+
+Réseau : Un ensemble d'éléments interconnectés entre eux 
+dans un but bien précis 
+
+Rx Informatique : Ensemble d'équipements informatique (matériel
+et logiciel) interconnectés entre eux dans le but de partager
+d'échanger des ressources.
+
+RESSOURCES : Tout ce qu'on peut partager dans le rx (scanner, projecteur,
+impri, application, data....)
+
+RESSOURCES LOGICIELLES ET MATERIELLES
+
+LAN : Rx local d'entreprise qui envoisine 100
+ 
+VPN : créer un tunel sécurisé pour acceder à un réseau distant 
+avec sa machine  
+
+MODEL OSI (Open System Interconnection) : normes qui permet 
+aux differnets equipements de differents founissuers ou 
+constructeurs de communiquer entre eux
+
+COUCHE PHYSIQUE : Adapte les données au type de support de transmission  / CABLE RJ45, WIFI, FIBRE, BLEUTOOTH
+COUCHE LIAISON : 2 sous couches LLC et MAC. Le LLC gére les trames et le MAC / Adr MAC
+l'identification de facon unique
+COUCHE RESEAU / TCP IP
+COUCHE TRANSPORT / TCP, UDP
+COUCHE SESSION : Etablit, gère et ferme les sessions de com entre les app
+PRESENTATION : Spécifie les formats des app (encodage MIME,Formatage: JPEG, PNG, BMP ; 
+compression; et encryptions des données)
+APPLICATION :Interagir avec les applications logicielles
+PROTOCOLE COUCHE APPLICATION : DHCP, DNS, FTP, HTTP, POP, IMAP, SMTP, SSH
+
+Le Model TCP/IP est inspiré du model  OSI 
+
+Cable Coaxial fin (technologie 10base 2) et épais (technologie 10base 5)
+
+PONT : Equipement qui permet d'interconnecté des équipements d'un meme 2 réseaux
+
+PERIPHERIQUE SANS FIL NATIF : pERIPHERIQUE INTEGRE DANS DES EQUIPEMENTS comme la 
+carte wifi intégré sur Pc
+
+2Modes d'implementations des Rx sans Fil : mode Ad-Hoc et mode Infrastructure
+
+TOPOLOGIE PHYSIQUE: Décrit la manière dont les équipemets sont connectés entre eux
+TOPOLOGIE LOGIQUE : Decris la manière dont les équipements communiquent entre eux
+
+Methodes d'acces pour les topologies
+CSMA/CD pour detecter et CSMA/CA pour eviter les collision, utilisé dans les top en Bus
+CSMA/CA utilisé dans les topologies
+JETON utilisé dans les topologies en anneaux 
+Token Ring
+
+UTF : Unshielded Twished Pair
+STP : Shielded Twished Pair
+
+Il y a collision quand on partage le meme support de transmission
+
+Un HUB fonctionne comme un répeteur à la difference qu'ils comporte plusieurs ports
+
+Il faut un équipemnt de niveau 2 comme un pont pour faire une segmentation afin de reduire 
+les domaines de collision
+
+IP Privée n'est pas routable sur internet
+Seul les IP Publique sont routables sur internet
+
+Gateway : Adrx qui permet à toute machine d'un réseau d'acceder à un autre réseau qui 
+n'est pas le sien
+
+PARAMETRE POUR DETERMINER LES CHEMINS PEUT ETRE DU :
+-Densité du trafic
+-Nbre de routeurs à franchir la destination
+-Vitesse de la liaison
+
+Domaine de broadcast : 
+
+2 PROTOCOLS DE ROUTAGE : IGP et EGP
+IGP (Interior Gateway Protocol) : IGP , OSFP; RIP
+EGP (Exterior Gateway Protocol) : BGP
+
+NUMERO DE PORT: afin que des communications puissent passer au même moment
+
+
+Configuration de base d'un routeur 
+
+CCNA 1
+LAN : Interconnecte +sieurs machines et géographiquement 
+WAN
+
+MODEM ET UNITE CSU : Modulateur et Demodulateur est un dispositif qui permet
+d'adapter le signal à un support de tramission
+
+ARCEP : Organe de régulation des communication Electrpnique et de la Poste
+
+NORMES WAN
+
+-COUCHE PHYSIQUE 
+ETTD : EQUI TERMINAL DE TRAITM de DONNE : Partie client d'une laison WAN, Il g"re les donnes
+ETCD : EQUI TERMI de COMMUNIC de DONNEES : IL achemine les donnees founies par 'ETTD
+
+-COUCHE LIAISON
+
+TECH WAN 
+-Service de commutation de circuit (PHYSIQUE; RTC, RNIS Par exemple)
+-Service de commutation de paquet, de cellule (VIRTUEL; VPN par exemple)
+-Service dediés : ligne physique dediés (Fibre optique)
+
+Com de paquet est similaire à la com de cellule  à la diff que les trames sont differnets ainsi que les traitement
+EX: Frame Relay pour la com de Paquet
+EX: ATM (53 octets pour la com de cellule)
+
+CDP Cisco Discovery Protocol : Protocol de utiisé avec les equi Cisco et permet d'avoir les infos sur les 
+autres equi du réseau
+
+-PROTOCOL DE ROUTAGE
+RIP : protocol de routage àvecteur de vitesse
+IGRP : à vecteur de distance qui fonctionne sur de grand réseau (Plusieur metrique comme 
+bande passante, Fiabilité, delais et charge)
+ICMP : 
+
+ACL : une fonctionnalité supplementaire pour les routeurs utilisé pour filtrer les paquets 
+en entrée et sortie au niveau des routeur
+
+SERVEUR DE COMMUNICATION : 
+
+VLAN : Réseau local Virtuel. Permet d'avoir +sieurs sous réseau virtuel à partir d'un rx local physique
+
+TECHS VSAT :
+PROTOCOLS : DVB IP par Sattelite
+Les satelites tournents à la meme vitesse que la terre
+INCONVENIENTS : Très couteux, Interferences, Vulnerabilité
+
+STP PROTOCOL
+Quand il y a égalité de priorité, le protocol se refait à ladrx MAC et priorise celle qui a la plus petite adresse
+Il peut se refaire au coût également
+
+BPDU : Les switch s'échangent ces bpdu qui comporte l'Adrx mac et les priorités
+
+DHCP
+enable
+conf f
+
+ADRESSAGE DE FACON STATIQUE
+ADRESSAGE DE FACON AUTOMATIQUE --- Attribution permanente
+
+IGRP
+Router()enable
+Router()conf t
+Router(config)#router eigrp 1
+Router(config-router)#router eigrp-id 1.1.1.1
+
+EIGRP est un protocol ameliorer du IGRP
+
+
+LES RESEAUX SANS FIL
+
+AVANTAGE : Mobilit
+CARACTERISTIQUE : 
+TECHS Rx sans fil : Wimax, WIFI, GSM, GPRS
+
+
+WPAN : Wireless Personal Area Network
+
+BLEUTOOTH : Débit de 1mbps
+
+MOHERF : Home Radio Frequence : 10Mpbs  vec une portéede 50 à 100m
+
+ZIGBEE: Débit de 250kb/s, freuence de 2,4Ghz
+
+INFRAROUGES (IRDA) : Quelques mega sur quelques metres
+
+£WLAN 
+AVANTAGES : Mobilité, flexivité
+
+Tout wifi est un WLAN mais tout les WLAN ne sont pas des  wifi
+
+MENACES : Ecoute clandestin, attaques par deni de service , Piratage de mot de passe, attaques de l'homme du milieu 
+
+
+Normes 802.1
+Tech 2,4 et 5Ghz
+
+WIFI ou 802.11: Utilisé sur les WLAN /  54Mbps sur +sieurs centaines de metres
+
+HIPERLAN2 : Débit de 54Mbps sur une fréquence entre 5150 à 5300Mhz
+
+£WMAN 
+WMAN ou Boucle locale Radio basé sur la norme 802.16/ Débit de 1 à 10Mbps sur 4 à 10 Kilomètre / Utilisé par les opérateurs de telecom
+
+WIMAX : Débit de 70Mbps avec une vitesse de 120Km/s sur +sieurs Kilometre / Norle 802.16 / Créer par Intel et Alvarion
+
+£WWAN :  Rx cellulaire mobile ou Rx étandu sans fil
+TECHS : GSM, GPRS, EDGE, UMTS, LTE
+
+
+PROBLEMES LIES AUX RESEAUX SANS FIL
+-Sécurité
+-Electricité
+-Obstacle
+-Interférence
+
+
+INFRASTRUCTURE Rx SANS FIL
+
+MODE AD HOC : Topologie mailléee, les equipements constituent eux meme des points d'acces
+Ils fonctionne comme  des emetteurs et des recepteurs, commedes repeteurs aussi pour releyer des informations
+PROTOCOL AD HOC : OLSR, AODV, DSR, DYMO, TBRP
+
+PROTOCOL FDD (Frequency D  ) Utiliser pour  la transmission des données dans les reseaux sans fil
+2 BANDES DE FREUENCES 1 pour l'emission et l'autre pour la reception
+PROTOCOL AODV : Etablis des routes dynamique à la demande, s'adapte aux reseaux dynamiques
+Proactifs (DSDV OLSR) 
+
+INFRASTUCTURE : Topologie en étoile
+
+Hando Over : Passer d'une cellule à une autre tout en gardant la communication interrompu
+
+Roaming : Passer d'une cellule à une autre sans que le réseau ne sit interrompu
+
+
+
+
+
+
+
