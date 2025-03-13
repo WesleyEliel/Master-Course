@@ -1,0 +1,36 @@
+@startuml
+left to right direction
+
+actor "Candidat" as C
+actor "Recruteur" as R
+
+usecase UCAuth as "S'authentifier"
+usecase UC1 as "S’inscrire sur la plateforme"
+usecase UC2 as "Gérer son profil"
+usecase UC3 as "Publier des offres d’emploi"
+usecase UC4 as "Rechercher des offres d’emploi"
+usecase UC5 as "Postuler à des offres d’emploi"
+usecase UC6 as "Gérer les candidatures"
+usecase UC7 as "Recevoir des recommandations personnalisées"
+
+' Lien entre les acteurs et les cas d'utilisation
+C --> UC1
+R --> UC1
+
+C --> UC2
+R --> UC3
+C --> UC4
+C --> UC5
+R --> UC6
+C --> UC7
+
+' Inclusion de l'authentification dans tous les cas d'utilisation
+UC2 ..> UCAuth : <<include>>
+UC3 ..> UCAuth : <<include>>
+UC4 ..> UCAuth : <<include>>
+UC5 ..> UCAuth : <<include>>
+UC6 ..> UCAuth : <<include>>
+UC7 ..> UCAuth : <<include>>
+
+@enduml
+
