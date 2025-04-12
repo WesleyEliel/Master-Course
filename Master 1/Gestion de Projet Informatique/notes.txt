@@ -1,0 +1,14 @@
+Le projet, c' est le contenu
+
+Au centre de la gestion de projet agile on a: le sprint ( courte durée au cours de la quelle l' équipe est aménée à implémenter une fonctionnalité ) 
+
+49 processus
+5 Groupes de processus
+
+
+A faire:
+
+Identifier le registre des parties prenantes
+Recueillir les exigences ( Tableau des exigences )
+
+
