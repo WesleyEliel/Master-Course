@@ -1,0 +1,10 @@
+create sequence incrementer increment by 1 start with 1 nomaxvalue;
+
+
+declare
+moy emp.sal%type;
+begin
+select avg(sal) into moy from emp where deptno = 30;
+insert into emp values(incrementer.NEXTVAL,'JONH DOE','PILOTE',7777,SYSDATE,moy,null,30);
+commit;
+end;

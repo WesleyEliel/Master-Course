@@ -1,0 +1,32 @@
+1./ creation des tables
+create table if not exists client (
+NumCli int unique primary key,
+Nom varchar(24) not null,
+Prenom varchar(48) not null, 
+DateNaiss date,
+Rue varchar(64),
+CP varchar(64),
+Ville varchar(96) not null
+)
+
+create table if not exists fournisseur (
+NumFour int not null unique primary key,
+RaisonSoc varchar(256)
+);
+
+create table if not exists produit (
+NumProd int unique not null primary key,
+Desi varchar(96),
+PrixUnit numeric(12, 2),
+NumFour int,
+constraint product_fourn foreign key (NumFour) references fournisseur(NumFour)
+);
+
+create table if not exists commande (
+NumCli int not null,
+NumProd int not null,
+Date timestamp, 
+Quantite numeric(10),
+constraint related_client foreign key (NumCli) references client(NumCli),
+constraint related_prod foreign key (NumProd) references produit(NumProd)
+)
